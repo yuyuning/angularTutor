@@ -1,3 +1,105 @@
-<div>这是我主页</div>
-<hr>
-<app-server> 我是一个倒入的 component</app-server>
+<div class="background">
+  <h1 class="titleFront">小廚房</h1>
+  <div class="meatBoxSize subTitle">
+    <p>
+      <span><h2>肉品類</h2></span>
+      <span class="textFront"><h4 >牛肉</h4></span>
+      <button class="btn buttonClick" (click)="meatPlus('beef')">+</button>
+      <span class="counterBox"><h4>{{ meatCounter['beef']}}</h4></span>
+      <button class="btn buttonClick" (click)="meatMinus('beef')">-</button>
+      <button class="btn buttonClick" (click)="meatReset('beef')" style="margin-left: 10px">Reset</button>
+
+    <p>
+      <span class="textFront"><h4>豬肉</h4></span>
+      <button class="btn buttonClick" (click)="meatPlus('pork')">+</button>
+      <span class="counterBox"><h4>{{ meatCounter['pork']}}</h4></span>
+      <button class="btn buttonClick" (click)="meatMinus('pork')">-</button>
+      <button class="btn buttonClick" (click)="meatReset('pork')" style="margin-left: 10px">Reset</button>
+
+    <p>
+      <span class="textFront"><h4>雞肉</h4></span>
+      <button class="btn buttonClick" (click)="meatPlus('chicken')">+</button>
+      <span class="counterBox"><h4>{{ meatCounter['chicken']}}</h4></span>
+      <button class="btn buttonClick" (click)="meatMinus('chicken')">-</button>
+      <button class="btn buttonClick" (click)="meatReset('chicken')" style="margin-left: 10px">Reset</button>
+
+    <p>
+      <span class="textFront"><h4>羊肉</h4></span>
+      <button class="btn buttonClick" (click)="meatPlus('lamb')">+</button>
+      <span class="counterBox"><h4>{{ meatCounter['lamb']}}</h4></span>
+      <button class="btn buttonClick" (click)="meatMinus('lamb')">-</button>
+      <button class="btn buttonClick" (click)="meatReset('lamb')" style="margin-left: 10px">Reset</button>
+    </p>
+
+  </div>
+  <div class="vegetableBoxSize subTitle">
+    <p>
+      <span><h2>蔬菜類</h2></span>
+      <span class="textFront"><h4>白菜</h4></span>
+      <button class="btn buttonClick" (click)="vegetablePlus('cabbage')">+</button>
+      <span class="counterBox"><h4>{{ vegetableCounter['cabbage']}}</h4></span>
+      <button class="btn buttonClick" (click)="vegetableMinus('cabbage')">-</button>
+      <button class="btn buttonClick" (click)="vegetableReset('cabbage')" style="margin-left: 10px">Reset</button>
+
+    <p>
+      <span class="textFront"><h4>黃瓜</h4></span>
+      <button class="btn buttonClick" (click)="vegetablePlus('cucumber')">+</button>
+      <span class="counterBox"><h4>{{ vegetableCounter['cucumber']}}</h4></span>
+      <button class="btn buttonClick" (click)="vegetableMinus('cucumber')">-</button>
+      <button class="btn buttonClick" (click)="vegetableReset('cucumber')" style="margin-left: 10px">Reset</button>
+
+    <p>
+      <span class="textFront"><h4>土豆</h4></span>
+      <button class="btn buttonClick" (click)="vegetablePlus('potato')">+</button>
+      <span class="counterBox"><h4>{{ vegetableCounter['potato']}}</h4></span>
+      <button class="btn buttonClick" (click)="vegetableMinus('potato')">-</button>
+      <button class="btn buttonClick" (click)="vegetableReset('potato')" style="margin-left: 10px">Reset</button>
+
+    <p>
+      <span class="textFront"><h4>青椒</h4></span>
+      <button class="btn buttonClick" (click)="vegetablePlus('green pepper')">+</button>
+      <span class="counterBox"><h4>{{ vegetableCounter['green pepper']}}</h4></span>
+      <button class="btn buttonClick" (click)="vegetableMinus('green pepper')">-</button>
+      <button class="btn buttonClick" (click)="vegetableReset('green pepper')" style="margin-left: 10px">Reset</button>
+    </p>
+
+  </div>
+  <div class="cookBoxSize subTitle">
+    <p>
+      <span><h2>烹飪方式</h2></span>
+      <input class = "checkFront" type ="checkbox">
+      <span class="textFront1"><h4>煎</h4></span>
+
+    <p>
+      <input class = "checkFront" type ="checkbox">
+      <span class="textFront1"><h4>炒</h4></span>
+
+    <p>
+      <input class = "checkFront" type ="checkbox">
+      <span class="textFront1"><h4>烹</h4></span>
+
+    <p>
+      <input class = "checkFront" type ="checkbox">
+      <span class="textFront1"><h4>炸</h4></span>
+    </p>
+
+  </div>
+
+  <div>
+    <input class="textBox" type="text" placeholder="其他食材：e.g">
+    <span><button type="button" class="button" (click)="made()">做菜</button></span>
+  </div>
+
+  <div class ="result" type ="result">
+    <div>
+      <span>菜餚:</span>
+
+    </div>
+    <div *ngIf="isMade">
+      <p style="font-size: 50px;"> {{ foodMaker }}</p>
+    </div>
+  </div>
+
+
+</div>
+
